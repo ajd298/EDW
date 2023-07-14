@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PAI.dbo.AirportsIATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AirportsIATA">
+    <Key>
+      <PropertyRef Name="AirportId" />
+    </Key>
+    <Property Name="AirportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IATACode" Type="varchar" MaxLength="4" />
+    <Property Name="Name" Type="nchar" MaxLength="70" />
+    <Property Name="Geography" Type="geography" />
+    <Property Name="CityCode" Type="varchar" MaxLength="4" />
+    <Property Name="ContinentCode" Type="varchar" MaxLength="2" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="AIRTRACK">
+    <Key>
+      <PropertyRef Name="AIRTRACKID" />
+    </Key>
+    <Property Name="AIRTRACKID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FLTNO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="FLTSUF" Type="varchar" MaxLength="1" />
+    <Property Name="DATOP" Type="datetime" Nullable="false" />
+    <Property Name="STNON" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CCTYPME" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CCID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="DOCNO" Type="varchar" MaxLength="15" />
+    <Property Name="PAXNM" Type="varchar" MaxLength="81" />
+    <Property Name="SERVCL" Type="varchar" MaxLength="2" />
+    <Property Name="STNOFF" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="BKGCLS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="MKTFLTNO" Type="varchar" MaxLength="7" />
+    <Property Name="UPDTD_ON" Type="datetime" />
+    <Property Name="INSERTED_ON" Type="datetime" />
+    <Property Name="CURR_STATUS" Type="int" />
+    <Property Name="DTID" Type="int" Nullable="false" />
+    <Property Name="FBCODE" Type="varchar" MaxLength="20" />
+    <Property Name="COUPNO" Type="varchar" MaxLength="2" />
+    <Property Name="CMPID" Type="varchar" MaxLength="16" />
+    <Property Name="CMPCNSPNTYPE" Type="varchar" MaxLength="4" />
+    <Property Name="AUTOCHECKIN" Type="varchar" MaxLength="1" />
+    <Property Name="TICKETLESSCODE" Type="varchar" MaxLength="4" />
+    <Property Name="PSGRNT" Type="varchar" MaxLength="2" />
+    <Property Name="RES_PSGRNT" Type="varchar" MaxLength="2" />
+    <Property Name="AIRTRACKRESID" Type="bigint" />
+    <Property Name="SRC" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="AIRTRACKDCSPAL">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FLTNO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="FLTSUF" Type="varchar" MaxLength="1" />
+    <Property Name="DATOP" Type="datetime" Nullable="false" />
+    <Property Name="STNON" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CCTYPME" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CCID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="DOCNO" Type="varchar" MaxLength="15" />
+    <Property Name="PAXNM" Type="varchar" MaxLength="81" />
+    <Property Name="SERVCL" Type="varchar" MaxLength="2" />
+    <Property Name="RECLOC" Type="varchar" MaxLength="7" />
+    <Property Name="STNOFF" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="BKGCLS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PSGRNT" Type="varchar" MaxLength="2" />
+    <Property Name="MKTFLTNO" Type="varchar" MaxLength="7" />
+    <Property Name="INSERTED_ON" Type="datetime" />
+    <Property Name="PROCESSED_STATUS" Type="int" />
+    <Property Name="DTEDWDCSID" Type="int" Nullable="false" />
+    <Property Name="FBCODE" Type="varchar" MaxLength="20" />
+    <Property Name="COUPNO" Type="varchar" MaxLength="2" />
+    <Property Name="RESP_CODE" Type="int" />
+    <Property Name="CMPID" Type="varchar" MaxLength="16" />
+    <Property Name="CMPCNSPNTYPE" Type="varchar" MaxLength="4" />
+    <Property Name="AUTOCHECKIN" Type="varchar" MaxLength="1" />
+    <Property Name="TICKETLESSCODE" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="AIRTRACKFTLPFS">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FLTNO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="FLTSUF" Type="varchar" MaxLength="1" />
+    <Property Name="DATOP" Type="datetime" Nullable="false" />
+    <Property Name="STNON" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CCTYPME" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CCID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="DOCNO" Type="varchar" MaxLength="15" />
+    <Property Name="PAXNM" Type="varchar" MaxLength="81" />
+    <Property Name="SERVCL" Type="varchar" MaxLength="2" />
+    <Property Name="RECLOC" Type="varchar" MaxLength="7" />
+    <Property Name="STNOFF" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="BKGCLS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PSGRNT" Type="varchar" MaxLength="2" />
+    <Property Name="MKTFLTNO" Type="varchar" MaxLength="7" />
+    <Property Name="INSERTED_ON" Type="datetime" />
+    <Property Name="PROCESSED_STATUS" Type="int" />
+    <Property Name="DT_EDW_FLT_ID" Type="int" Nullable="false" />
+    <Property Name="FBCODE" Type="varchar" MaxLength="20" />
+    <Property Name="COUPNO" Type="varchar" MaxLength="2" />
+    <Property Name="RESP_CODE" Type="int" />
+    <Property Name="CMPID" Type="varchar" MaxLength="16" />
+    <Property Name="CMPCNSPNTYPE" Type="varchar" MaxLength="4" />
+    <Property Name="AUTOCHECKIN" Type="varchar" MaxLength="1" />
+    <Property Name="TICKETLESSCODE" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="AIRTRACKRES">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FLTNO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="FLTSUF" Type="varchar" MaxLength="1" />
+    <Property Name="DATOP" Type="datetime" Nullable="false" />
+    <Property Name="STNON" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CCTYPME" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CCID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="DOCNO" Type="varchar" MaxLength="15" />
+    <Property Name="PAXNM" Type="varchar" MaxLength="81" />
+    <Property Name="SERVCL" Type="varchar" MaxLength="2" />
+    <Property Name="RECLOC" Type="varchar" MaxLength="7" />
+    <Property Name="STNOFF" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="BKGCLS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PSGRNT" Type="varchar" MaxLength="2" />
+    <Property Name="MKTFLTNO" Type="varchar" MaxLength="7" />
+    <Property Name="INSERTED_ON" Type="datetime" />
+    <Property Name="PROCESSED_STATUS" Type="int" />
+    <Property Name="DTEDWRESID" Type="int" Nullable="false" />
+    <Property Name="FBCODE" Type="varchar" MaxLength="20" />
+    <Property Name="COUPNO" Type="varchar" MaxLength="2" />
+    <Property Name="RESP_CODE" Type="int" />
+    <Property Name="CMPID" Type="varchar" MaxLength="16" />
+    <Property Name="CMPCNSPNTYPE" Type="varchar" MaxLength="4" />
+    <Property Name="AUTOCHECKIN" Type="varchar" MaxLength="1" />
+    <Property Name="TICKETLESSCODE" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="DATATRANSFERAIRTRACK">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DELIVNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DATE_OF_INSERT" Type="datetime" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="int" />
+    <Property Name="LST_UPDTD" Type="datetime" />
+    <Property Name="SRC" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWDCS">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="varchar" MaxLength="10" />
+    <Property Name="SENDSYS" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVNO" Type="int" Nullable="false" />
+    <Property Name="TYPDELIV" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVDAT" Type="datetime" />
+    <Property Name="DATE_OF_INSERT" Type="datetime" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="int" />
+    <Property Name="LST_UPDTD" Type="datetime" />
+    <Property Name="NOOF_REC_RJCTD" Type="int" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWFLT">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="varchar" MaxLength="10" />
+    <Property Name="SENDSYS" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVNO" Type="int" Nullable="false" />
+    <Property Name="TYPDELIV" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVDAT" Type="datetime" />
+    <Property Name="DATE_OF_INSERT" Type="datetime" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="int" />
+    <Property Name="LST_UPDTD" Type="datetime" />
+    <Property Name="NOOF_REC_RJCTD" Type="int" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWRES">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="varchar" MaxLength="10" />
+    <Property Name="SENDSYS" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVNO" Type="int" Nullable="false" />
+    <Property Name="TYPDELIV" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVDAT" Type="datetime" />
+    <Property Name="DATE_OF_INSERT" Type="datetime" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="int" />
+    <Property Name="LST_UPDTD" Type="datetime" />
+    <Property Name="NOOF_REC_RJCTD" Type="int" />
+  </EntityType>
+  <EntityType Name="DATATRANSFERSIRAXIN">
+    <Key>
+      <PropertyRef Name="LOCAL_DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="varchar" MaxLength="10" />
+    <Property Name="SENDSYS" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVNO" Type="int" Nullable="false" />
+    <Property Name="TYPDELIV" Type="varchar" MaxLength="3" />
+    <Property Name="DELIVDAT" Type="datetime" />
+    <Property Name="DATE_OF_INSERT" Type="datetime" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="int" />
+    <Property Name="LST_UPDTD" Type="datetime" />
+    <Property Name="NOOF_REC_RJCTD" Type="int" />
+    <Property Name="LOCAL_DELIVNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PAI.dbo.VLDSEG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VLDSEG">
+    <Key>
+      <PropertyRef Name="AIRLDESG" />
+      <PropertyRef Name="CARRIER" />
+      <PropertyRef Name="CITYON" />
+      <PropertyRef Name="CITYOFF" />
+      <PropertyRef Name="DATEFROM" />
+      <PropertyRef Name="DATETO" />
+      <PropertyRef Name="DAYCHG" />
+      <PropertyRef Name="LINEACD" />
+      <PropertyRef Name="RSCS" />
+    </Key>
+    <Property Name="AIRLDESG" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="CARRIER" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="CITYON" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="CITYOFF" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DATEFROM" Type="date" Nullable="false" />
+    <Property Name="DATETO" Type="date" Nullable="false" />
+    <Property Name="DAYCHG" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="LINEACD" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="RSCS" Type="char" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AIRTRACK___DT_ED__100C566E">
+    <End Role="DATATRANSFEREDWFLT" Type="Self.DATATRANSFEREDWFLT" Multiplicity="1" />
+    <End Role="AIRTRACKFTLPFS" Type="Self.AIRTRACKFTLPFS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWFLT">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKFTLPFS">
+        <PropertyRef Name="DT_EDW_FLT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AIRTRACK__DTID__3EC74557">
+    <End Role="DATATRANSFERAIRTRACK" Type="Self.DATATRANSFERAIRTRACK" Multiplicity="1" />
+    <End Role="AIRTRACK" Type="Self.AIRTRACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFERAIRTRACK">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACK">
+        <PropertyRef Name="DTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AIRTRACKD__DT_ED__16B953FD">
+    <End Role="DATATRANSFEREDWDCS" Type="Self.DATATRANSFEREDWDCS" Multiplicity="1" />
+    <End Role="AIRTRACKDCSPAL" Type="Self.AIRTRACKDCSPAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWDCS">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKDCSPAL">
+        <PropertyRef Name="DTEDWDCSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AIRTRACKR__DTEDW__1E5A75C5">
+    <End Role="DATATRANSFEREDWRES" Type="Self.DATATRANSFEREDWRES" Multiplicity="1" />
+    <End Role="AIRTRACKRES" Type="Self.AIRTRACKRES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWRES">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKRES">
+        <PropertyRef Name="DTEDWRESID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AIRTRACKRESID">
+    <End Role="AIRTRACKRES" Type="Self.AIRTRACKRES" Multiplicity="0..1" />
+    <End Role="AIRTRACK" Type="Self.AIRTRACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AIRTRACKRES">
+        <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+      </Principal>
+      <Dependent Role="AIRTRACK">
+        <PropertyRef Name="AIRTRACKRESID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CheckDayChanged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OGN" Type="varchar" Mode="In" />
+    <Parameter Name="DEST" Type="varchar" Mode="In" />
+    <Parameter Name="DATOP" Type="datetime" Mode="In" />
+    <Parameter Name="DAY_CHANGED" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="GetFlightDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepStn" Type="varchar" Mode="In" />
+    <Parameter Name="ArrStn" Type="varchar" Mode="In" />
+    <Parameter Name="fltType" Type="varchar" Mode="InOut" />
+    <Parameter Name="distTravelled" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetFlightDetailsSIRAX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepStn" Type="varchar" Mode="In" />
+    <Parameter Name="ArrStn" Type="varchar" Mode="In" />
+    <Parameter Name="fltType" Type="varchar" Mode="InOut" />
+    <Parameter Name="DepCity" Type="varchar" Mode="InOut" />
+    <Parameter Name="ArrCity" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="GetResSRXMatchedRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IsDayChanges" Type="bit" Mode="In" />
+    <Parameter Name="DocNo" Type="varchar" Mode="In" />
+    <Parameter Name="DepartureDate" Type="datetime" Mode="In" />
+    <Parameter Name="MissingData" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetResSRXMatchedRecordsNoDoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IsDayChanges" Type="bit" Mode="In" />
+    <Parameter Name="PaxName" Type="varchar" Mode="In" />
+    <Parameter Name="DepartureDate" Type="datetime" Mode="In" />
+    <Parameter Name="StnOn" Type="varchar" Mode="In" />
+    <Parameter Name="StnOff" Type="varchar" Mode="In" />
+    <Parameter Name="FltNo" Type="varchar" Mode="In" />
+    <Parameter Name="MissingData" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LoadAirtrack" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LoadAirtrackFromFTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="RetreiveReservationRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CCID" Type="varchar" Mode="In" />
+    <Parameter Name="STNON" Type="varchar" Mode="In" />
+    <Parameter Name="STNOFF" Type="varchar" Mode="In" />
+    <Parameter Name="DATOP" Type="datetime" Mode="In" />
+    <Parameter Name="DOCNO" Type="varchar" Mode="In" />
+    <Parameter Name="FLTNO" Type="varchar" Mode="In" />
+    <Parameter Name="PAXNM" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="PAIModelStoreContainer">
+    <EntitySet Name="AIRTRACK" EntityType="Self.AIRTRACK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AIRTRACKDCSPAL" EntityType="Self.AIRTRACKDCSPAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AIRTRACKFTLPFS" EntityType="Self.AIRTRACKFTLPFS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AIRTRACKRES" EntityType="Self.AIRTRACKRES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATATRANSFERAIRTRACK" EntityType="Self.DATATRANSFERAIRTRACK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATATRANSFEREDWDCS" EntityType="Self.DATATRANSFEREDWDCS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATATRANSFEREDWFLT" EntityType="Self.DATATRANSFEREDWFLT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATATRANSFEREDWRES" EntityType="Self.DATATRANSFEREDWRES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATATRANSFERSIRAXIN" EntityType="Self.DATATRANSFERSIRAXIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AirportsIATA" EntityType="Self.AirportsIATA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AirportsIATA].[AirportId] AS [AirportId], 
+    [AirportsIATA].[IATACode] AS [IATACode], 
+    [AirportsIATA].[Name] AS [Name], 
+    [AirportsIATA].[Geography] AS [Geography], 
+    [AirportsIATA].[CityCode] AS [CityCode], 
+    [AirportsIATA].[ContinentCode] AS [ContinentCode], 
+    [AirportsIATA].[CountryCode] AS [CountryCode]
+    FROM [dbo].[AirportsIATA] AS [AirportsIATA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VLDSEG" EntityType="Self.VLDSEG" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VLDSEG].[AIRLDESG] AS [AIRLDESG], 
+    [VLDSEG].[CARRIER] AS [CARRIER], 
+    [VLDSEG].[CITYON] AS [CITYON], 
+    [VLDSEG].[CITYOFF] AS [CITYOFF], 
+    [VLDSEG].[DATEFROM] AS [DATEFROM], 
+    [VLDSEG].[DATETO] AS [DATETO], 
+    [VLDSEG].[DAYCHG] AS [DAYCHG], 
+    [VLDSEG].[LINEACD] AS [LINEACD], 
+    [VLDSEG].[RSCS] AS [RSCS]
+    FROM [dbo].[VLDSEG] AS [VLDSEG]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__AIRTRACK___DT_ED__100C566E" Association="Self.FK__AIRTRACK___DT_ED__100C566E">
+      <End Role="DATATRANSFEREDWFLT" EntitySet="DATATRANSFEREDWFLT" />
+      <End Role="AIRTRACKFTLPFS" EntitySet="AIRTRACKFTLPFS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AIRTRACK__DTID__3EC74557" Association="Self.FK__AIRTRACK__DTID__3EC74557">
+      <End Role="DATATRANSFERAIRTRACK" EntitySet="DATATRANSFERAIRTRACK" />
+      <End Role="AIRTRACK" EntitySet="AIRTRACK" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AIRTRACKD__DT_ED__16B953FD" Association="Self.FK__AIRTRACKD__DT_ED__16B953FD">
+      <End Role="DATATRANSFEREDWDCS" EntitySet="DATATRANSFEREDWDCS" />
+      <End Role="AIRTRACKDCSPAL" EntitySet="AIRTRACKDCSPAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AIRTRACKR__DTEDW__1E5A75C5" Association="Self.FK__AIRTRACKR__DTEDW__1E5A75C5">
+      <End Role="DATATRANSFEREDWRES" EntitySet="DATATRANSFEREDWRES" />
+      <End Role="AIRTRACKRES" EntitySet="AIRTRACKRES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AIRTRACKRESID" Association="Self.FK_AIRTRACKRESID">
+      <End Role="AIRTRACKRES" EntitySet="AIRTRACKRES" />
+      <End Role="AIRTRACK" EntitySet="AIRTRACK" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

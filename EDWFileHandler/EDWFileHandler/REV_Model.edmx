@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EDWREVEXPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EDWREVEXP.REV.vPAI_Coupon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPAI_Coupon">
+          <Key>
+            <PropertyRef Name="OWNER_ID" />
+            <PropertyRef Name="TYPEDOC" />
+            <PropertyRef Name="ISSUE_DATE" />
+            <PropertyRef Name="MAIN_TYPE" />
+            <PropertyRef Name="COUPON" />
+            <PropertyRef Name="TRAFFIC_STATUS" />
+            <PropertyRef Name="MISMATCH_STATUS" />
+            <PropertyRef Name="EXCHANGE_STATUS" />
+            <PropertyRef Name="INC_INVOICE_STATUS" />
+            <PropertyRef Name="MANCL_STATUS" />
+            <PropertyRef Name="PRINT_EXCH_STATUS" />
+            <PropertyRef Name="REV_CPN" />
+            <PropertyRef Name="PL_FLIGHT_DATE" />
+            <PropertyRef Name="TRAD_BOOK_NBR" />
+            <PropertyRef Name="FLOWN_MAIN_TYPE" />
+            <PropertyRef Name="FLOWN_SUB_TYPE" />
+            <PropertyRef Name="STRANDING" />
+            <PropertyRef Name="FB_GROUP" />
+            <PropertyRef Name="EB_MBR_ID" />
+            <PropertyRef Name="SOLD_MAIN_TYPE" />
+          </Key>
+          <Property Name="AIRNO_JRNY" Type="varchar" MaxLength="4" />
+          <Property Name="FORMSENO_JRNY" Type="char" MaxLength="11" />
+          <Property Name="AIRNO_CONJ" Type="varchar" MaxLength="4" />
+          <Property Name="FORMSENO_CONJ" Type="char" MaxLength="11" />
+          <Property Name="SEQ_NO_DOC" Type="smallint" />
+          <Property Name="SEQ_NO_CONJ" Type="smallint" />
+          <Property Name="OWNER_ID" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="AIRNO" Type="varchar" MaxLength="4" />
+          <Property Name="FORMSENO" Type="char" MaxLength="11" />
+          <Property Name="TYPEPAX" Type="varchar" MaxLength="2" />
+          <Property Name="TYPEIND" Type="varchar" MaxLength="3" />
+          <Property Name="TYPEDOC" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ISSUE_DATE" Type="date" Nullable="false" />
+          <Property Name="PNR" Type="varchar" MaxLength="13" />
+          <Property Name="PAXNAME" Type="varchar" MaxLength="30" />
+          <Property Name="MAIN_TYPE" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="COUPON" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="TRAFFIC_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="MISMATCH_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="EXCHANGE_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="INC_INVOICE_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="MANCL_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="PRINT_EXCH_STATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="REV_CPN" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="PL_FROM" Type="varchar" MaxLength="5" />
+          <Property Name="PL_TO" Type="varchar" MaxLength="5" />
+          <Property Name="PL_CARRIER" Type="char" MaxLength="3" />
+          <Property Name="PL_FLIGHTNO" Type="char" MaxLength="5" />
+          <Property Name="PL_FLIGHT_DATE" Type="date" Nullable="false" />
+          <Property Name="BOOKING_CLASS" Type="varchar" MaxLength="1" />
+          <Property Name="FBTD" Type="varchar" MaxLength="15" />
+          <Property Name="FB_CLASS" Type="varchar" MaxLength="1" />
+          <Property Name="PAID_CLASS" Type="varchar" MaxLength="1" />
+          <Property Name="TRAD_BOOK_NBR" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="FLOWN_MAIN_TYPE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="FLOWN_SUB_TYPE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="STRANDING" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="NBR_PAX" Type="smallint" />
+          <Property Name="FLIGHT_NBR" Type="char" MaxLength="7" />
+          <Property Name="FLIGHT_DATE" Type="date" />
+          <Property Name="ON_CITY" Type="varchar" MaxLength="5" />
+          <Property Name="OFF_CITY" Type="varchar" MaxLength="5" />
+          <Property Name="FB_GROUP" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="EB_MBR_ID" Type="int" Nullable="false" />
+          <Property Name="SOLD_MAIN_TYPE" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EDWREVEXPModelStoreContainer">
+          <EntitySet Name="vPAI_Coupon" EntityType="Self.vPAI_Coupon" store:Type="Views" store:Schema="REV">
+            <DefiningQuery>SELECT 
+    [vPAI_Coupon].[AIRNO_JRNY] AS [AIRNO_JRNY], 
+    [vPAI_Coupon].[FORMSENO_JRNY] AS [FORMSENO_JRNY], 
+    [vPAI_Coupon].[AIRNO_CONJ] AS [AIRNO_CONJ], 
+    [vPAI_Coupon].[FORMSENO_CONJ] AS [FORMSENO_CONJ], 
+    [vPAI_Coupon].[SEQ_NO_DOC] AS [SEQ_NO_DOC], 
+    [vPAI_Coupon].[SEQ_NO_CONJ] AS [SEQ_NO_CONJ], 
+    [vPAI_Coupon].[OWNER_ID] AS [OWNER_ID], 
+    [vPAI_Coupon].[AIRNO] AS [AIRNO], 
+    [vPAI_Coupon].[FORMSENO] AS [FORMSENO], 
+    [vPAI_Coupon].[TYPEPAX] AS [TYPEPAX], 
+    [vPAI_Coupon].[TYPEIND] AS [TYPEIND], 
+    [vPAI_Coupon].[TYPEDOC] AS [TYPEDOC], 
+    [vPAI_Coupon].[ISSUE_DATE] AS [ISSUE_DATE], 
+    [vPAI_Coupon].[PNR] AS [PNR], 
+    [vPAI_Coupon].[PAXNAME] AS [PAXNAME], 
+    [vPAI_Coupon].[MAIN_TYPE] AS [MAIN_TYPE], 
+    [vPAI_Coupon].[COUPON] AS [COUPON], 
+    [vPAI_Coupon].[TRAFFIC_STATUS] AS [TRAFFIC_STATUS], 
+    [vPAI_Coupon].[MISMATCH_STATUS] AS [MISMATCH_STATUS], 
+    [vPAI_Coupon].[EXCHANGE_STATUS] AS [EXCHANGE_STATUS], 
+    [vPAI_Coupon].[INC_INVOICE_STATUS] AS [INC_INVOICE_STATUS], 
+    [vPAI_Coupon].[MANCL_STATUS] AS [MANCL_STATUS], 
+    [vPAI_Coupon].[PRINT_EXCH_STATUS] AS [PRINT_EXCH_STATUS], 
+    [vPAI_Coupon].[REV_CPN] AS [REV_CPN], 
+    [vPAI_Coupon].[PL_FROM] AS [PL_FROM], 
+    [vPAI_Coupon].[PL_TO] AS [PL_TO], 
+    [vPAI_Coupon].[PL_CARRIER] AS [PL_CARRIER], 
+    [vPAI_Coupon].[PL_FLIGHTNO] AS [PL_FLIGHTNO], 
+    [vPAI_Coupon].[PL_FLIGHT_DATE] AS [PL_FLIGHT_DATE], 
+    [vPAI_Coupon].[BOOKING_CLASS] AS [BOOKING_CLASS], 
+    [vPAI_Coupon].[FBTD] AS [FBTD], 
+    [vPAI_Coupon].[FB_CLASS] AS [FB_CLASS], 
+    [vPAI_Coupon].[PAID_CLASS] AS [PAID_CLASS], 
+    [vPAI_Coupon].[TRAD_BOOK_NBR] AS [TRAD_BOOK_NBR], 
+    [vPAI_Coupon].[FLOWN_MAIN_TYPE] AS [FLOWN_MAIN_TYPE], 
+    [vPAI_Coupon].[FLOWN_SUB_TYPE] AS [FLOWN_SUB_TYPE], 
+    [vPAI_Coupon].[STRANDING] AS [STRANDING], 
+    [vPAI_Coupon].[NBR_PAX] AS [NBR_PAX], 
+    [vPAI_Coupon].[FLIGHT_NBR] AS [FLIGHT_NBR], 
+    [vPAI_Coupon].[FLIGHT_DATE] AS [FLIGHT_DATE], 
+    [vPAI_Coupon].[ON_CITY] AS [ON_CITY], 
+    [vPAI_Coupon].[OFF_CITY] AS [OFF_CITY], 
+    [vPAI_Coupon].[FB_GROUP] AS [FB_GROUP], 
+    [vPAI_Coupon].[EB_MBR_ID] AS [EB_MBR_ID], 
+    [vPAI_Coupon].[SOLD_MAIN_TYPE] AS [SOLD_MAIN_TYPE]
+    FROM [REV].[vPAI_Coupon] AS [vPAI_Coupon]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EDWREVEXPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vPAI_Coupon">
+          <Key>
+            <PropertyRef Name="OWNER_ID" />
+            <PropertyRef Name="TYPEDOC" />
+            <PropertyRef Name="ISSUE_DATE" />
+            <PropertyRef Name="MAIN_TYPE" />
+            <PropertyRef Name="COUPON" />
+            <PropertyRef Name="TRAFFIC_STATUS" />
+            <PropertyRef Name="MISMATCH_STATUS" />
+            <PropertyRef Name="EXCHANGE_STATUS" />
+            <PropertyRef Name="INC_INVOICE_STATUS" />
+            <PropertyRef Name="MANCL_STATUS" />
+            <PropertyRef Name="PRINT_EXCH_STATUS" />
+            <PropertyRef Name="REV_CPN" />
+            <PropertyRef Name="PL_FLIGHT_DATE" />
+            <PropertyRef Name="TRAD_BOOK_NBR" />
+            <PropertyRef Name="FLOWN_MAIN_TYPE" />
+            <PropertyRef Name="FLOWN_SUB_TYPE" />
+            <PropertyRef Name="STRANDING" />
+            <PropertyRef Name="FB_GROUP" />
+            <PropertyRef Name="EB_MBR_ID" />
+            <PropertyRef Name="SOLD_MAIN_TYPE" />
+          </Key>
+          <Property Name="AIRNO_JRNY" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FORMSENO_JRNY" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="AIRNO_CONJ" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FORMSENO_CONJ" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="SEQ_NO_DOC" Type="Int16" />
+          <Property Name="SEQ_NO_CONJ" Type="Int16" />
+          <Property Name="OWNER_ID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AIRNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FORMSENO" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="TYPEPAX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TYPEIND" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="TYPEDOC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISSUE_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PNR" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="PAXNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MAIN_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COUPON" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TRAFFIC_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MISMATCH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXCHANGE_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INC_INVOICE_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MANCL_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRINT_EXCH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="REV_CPN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PL_FROM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PL_TO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PL_CARRIER" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PL_FLIGHTNO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="PL_FLIGHT_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BOOKING_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FBTD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FB_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PAID_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TRAD_BOOK_NBR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLOWN_MAIN_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLOWN_SUB_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STRANDING" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NBR_PAX" Type="Int16" />
+          <Property Name="FLIGHT_NBR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="FLIGHT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ON_CITY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="OFF_CITY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FB_GROUP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EB_MBR_ID" Type="Int32" Nullable="false" />
+          <Property Name="SOLD_MAIN_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EDWREVEXPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vPAI_Coupon" EntityType="Self.vPAI_Coupon" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EDWREVEXPModelStoreContainer" CdmEntityContainer="EDWREVEXPEntities">
+          <EntitySetMapping Name="vPAI_Coupon">
+            <EntityTypeMapping TypeName="EDWREVEXPModel.vPAI_Coupon">
+              <MappingFragment StoreEntitySet="vPAI_Coupon">
+                <ScalarProperty Name="AIRNO_JRNY" ColumnName="AIRNO_JRNY" />
+                <ScalarProperty Name="FORMSENO_JRNY" ColumnName="FORMSENO_JRNY" />
+                <ScalarProperty Name="AIRNO_CONJ" ColumnName="AIRNO_CONJ" />
+                <ScalarProperty Name="FORMSENO_CONJ" ColumnName="FORMSENO_CONJ" />
+                <ScalarProperty Name="SEQ_NO_DOC" ColumnName="SEQ_NO_DOC" />
+                <ScalarProperty Name="SEQ_NO_CONJ" ColumnName="SEQ_NO_CONJ" />
+                <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+                <ScalarProperty Name="AIRNO" ColumnName="AIRNO" />
+                <ScalarProperty Name="FORMSENO" ColumnName="FORMSENO" />
+                <ScalarProperty Name="TYPEPAX" ColumnName="TYPEPAX" />
+                <ScalarProperty Name="TYPEIND" ColumnName="TYPEIND" />
+                <ScalarProperty Name="TYPEDOC" ColumnName="TYPEDOC" />
+                <ScalarProperty Name="ISSUE_DATE" ColumnName="ISSUE_DATE" />
+                <ScalarProperty Name="PNR" ColumnName="PNR" />
+                <ScalarProperty Name="PAXNAME" ColumnName="PAXNAME" />
+                <ScalarProperty Name="MAIN_TYPE" ColumnName="MAIN_TYPE" />
+                <ScalarProperty Name="COUPON" ColumnName="COUPON" />
+                <ScalarProperty Name="TRAFFIC_STATUS" ColumnName="TRAFFIC_STATUS" />
+                <ScalarProperty Name="MISMATCH_STATUS" ColumnName="MISMATCH_STATUS" />
+                <ScalarProperty Name="EXCHANGE_STATUS" ColumnName="EXCHANGE_STATUS" />
+                <ScalarProperty Name="INC_INVOICE_STATUS" ColumnName="INC_INVOICE_STATUS" />
+                <ScalarProperty Name="MANCL_STATUS" ColumnName="MANCL_STATUS" />
+                <ScalarProperty Name="PRINT_EXCH_STATUS" ColumnName="PRINT_EXCH_STATUS" />
+                <ScalarProperty Name="REV_CPN" ColumnName="REV_CPN" />
+                <ScalarProperty Name="PL_FROM" ColumnName="PL_FROM" />
+                <ScalarProperty Name="PL_TO" ColumnName="PL_TO" />
+                <ScalarProperty Name="PL_CARRIER" ColumnName="PL_CARRIER" />
+                <ScalarProperty Name="PL_FLIGHTNO" ColumnName="PL_FLIGHTNO" />
+                <ScalarProperty Name="PL_FLIGHT_DATE" ColumnName="PL_FLIGHT_DATE" />
+                <ScalarProperty Name="BOOKING_CLASS" ColumnName="BOOKING_CLASS" />
+                <ScalarProperty Name="FBTD" ColumnName="FBTD" />
+                <ScalarProperty Name="FB_CLASS" ColumnName="FB_CLASS" />
+                <ScalarProperty Name="PAID_CLASS" ColumnName="PAID_CLASS" />
+                <ScalarProperty Name="TRAD_BOOK_NBR" ColumnName="TRAD_BOOK_NBR" />
+                <ScalarProperty Name="FLOWN_MAIN_TYPE" ColumnName="FLOWN_MAIN_TYPE" />
+                <ScalarProperty Name="FLOWN_SUB_TYPE" ColumnName="FLOWN_SUB_TYPE" />
+                <ScalarProperty Name="STRANDING" ColumnName="STRANDING" />
+                <ScalarProperty Name="NBR_PAX" ColumnName="NBR_PAX" />
+                <ScalarProperty Name="FLIGHT_NBR" ColumnName="FLIGHT_NBR" />
+                <ScalarProperty Name="FLIGHT_DATE" ColumnName="FLIGHT_DATE" />
+                <ScalarProperty Name="ON_CITY" ColumnName="ON_CITY" />
+                <ScalarProperty Name="OFF_CITY" ColumnName="OFF_CITY" />
+                <ScalarProperty Name="FB_GROUP" ColumnName="FB_GROUP" />
+                <ScalarProperty Name="EB_MBR_ID" ColumnName="EB_MBR_ID" />
+                <ScalarProperty Name="SOLD_MAIN_TYPE" ColumnName="SOLD_MAIN_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

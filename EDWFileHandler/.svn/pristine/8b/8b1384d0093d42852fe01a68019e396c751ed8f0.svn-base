@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- File name: FTLHeaderFileMap.xml     
+     Created: 2019-10-05  Saurav Saroya-->
+<FileMap>
+  <!-- Serial="xx" is used by the program to order the fields in the DDL. "xx" must begin with 0 when less than 10! -->
+  <SIRAX_HEADER Serial="01" RowType="Header" Name="RecordRowType" DbFieldName="-" Start="1" Length="2" FileDataType="AN" CodeDataType="int" DbDataType="-" Required="M" TestExample="01" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="02" RowType="Header" Name="SendingSystem" DbFieldName="SENDSYS" Start="2" Length="3" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(3)" Required="M" TestExample="PAL" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="03" RowType="Header" Name="DeliverySeqNo" DbFieldName="DELIVNO" Start="26" Length="5" FileDataType="N" CodeDataType="int" DbDataType="INT" Required="M" TestExample="00001" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="04" RowType="Header" Name="TypeOfDelivery" DbFieldName="TYPDELIV" Start="23" Length="3" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(3)" Required="O" TestExample="SEG" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="05" RowType="Header" Name="DeliveryDate" DbFieldName="DELIVDAT" Start="15" Length="8" FileDataType="N" CodeDataType="DateTime" DbDataType="DATETIME" Required="M" TestExample="19921123" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="06" RowType="Header" Name="Supplier" DbFieldName="SUPPLIER" Start="5" Length="10" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(10)" Required="O" TestExample="SK" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="07" RowType="Header" Name="Filler" DbFieldName="-" Start="31" Length="129" FileDataType="AN" CodeDataType="-" DbDataType="-" Required="M" TestExample=" " ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="08" RowType="Trailer" Name="RecordRowType" DbFieldName="-" Start="1" Length="2" FileDataType="AN" CodeDataType="int" DbDataType="-" Required="M" TestExample="01" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="09" RowType="Trailer" Name="SendingSystem" DbFieldName="SENDSYS" Start="2" Length="3" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(3)" Required="M" TestExample="PAL" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="10" RowType="Trailer" Name="DeliverySeqNo" DbFieldName="DELIVNO" Start="26" Length="5" FileDataType="N" CodeDataType="int" DbDataType="INT" Required="M" TestExample="00001" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="11" RowType="Trailer" Name="TypeOfDelivery" DbFieldName="TYPDELIV" Start="23" Length="3" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(3)" Required="O" TestExample="SEG" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="12" RowType="Trailer" Name="DeliveryDate" DbFieldName="DELIVDAT" Start="15" Length="8" FileDataType="N" CodeDataType="DateTime" DbDataType="DATETIME" Required="M" TestExample="19921123" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="13" RowType="Trailer" Name="Supplier" DbFieldName="SUPPLIER" Start="5" Length="10" FileDataType="AN" CodeDataType="String" DbDataType="VARCHAR(10)" Required="O" TestExample="SK" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="13" RowType="Trailer" Name="NoOfRecords" DbFieldName="TOTAL_REC" Start="31" Length="6" FileDataType="N" CodeDataType="int" DbDataType="INT" Required="O" TestExample="SK" ValidValues="" CondMandForFileType=""/>
+  <SIRAX_HEADER Serial="10" RowType="Trailer" Name="Filler" DbFieldName="-" Start="37" Length="159" FileDataType="AN" CodeDataType="-" DbDataType="-" Required="M" TestExample=" " ValidValues="" CondMandForFileType=""/>
+</FileMap>    

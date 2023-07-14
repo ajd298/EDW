@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- File name: AccrualErrorCodes.xml
+
+     DbName: Column name in database.
+     DtFile: Data type in input file
+     DtCode: Data type in c# code
+     DtDB: Data type in database.
+     
+     Created: 2007-04-13  Peter Steiner-->
+<ResponseCodes>
+  <Field Type="TechError" Code="001" Description="Incorrect record length" Header="Y" Data="Y" Trailer="Y" AccrualHandBack="Y" AccrualBillingReject="Y" RetroCreditResponse="Y"/>
+  <Field Type="TechError" Code="002" Description="Incorrect Operating Airline code" Header="Y" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="Y" RetroCreditResponse="Y"/>
+  <Field Type="TechError" Code="003" Description="Incorrect FFPAirline code (header record)" Header="Y" Data="N" Trailer="N" AccrualHandBack="Y" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="004" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="005" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="006" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="007" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="008" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="009" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="TechError" Code="010" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+  <Field Type="BusinesRuleError" Code="011" Description="Incorrect Operating Airline code" Header="Y" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="Y" RetroCreditResponse="Y"/>
+  <Field Type="BusinesRuleError" Code="012" Description="Departure date outside of Retro period" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="Y" RetroCreditResponse="Y"/>
+  <Field Type="BusinesRuleError" Code="013" Description="Mandatory fields invalid format or missing" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="014" Description="Departure date outside of contract period" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="015" Description="Invalid name check override" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="016" Description="Incorrect FFP airline code" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="017" Description="Duplicate flight activity/already credited" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="018" Description="Request within 14-day holding period" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="019" Description="Posting not approved" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="020" Description="Flight activity perviously billed" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="021" Description="Incorrect billing rate" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="022" Description="Incorrect number of miles" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="023" Description="Ivalid transaction type" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="024" Description="Ivalid promotion code" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="025" Description="Ivalid promotion period" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="026" Description="Invalid record type" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="027" Description="Invalid origin and / or destination airport" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="028" Description="Incorrect operating airline authorization number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="029" Description="Incorrect FFP internal Reference Number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="BusinesRuleError" Code="030" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+  <Field Type="FlightDetailError" Code="031" Description="Not a valid flight" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="032" Description="Incorrect flight number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="033" Description="Origin- destination does not match flight number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="034" Description="Booking class not eligible for accrual" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="035" Description="Flight not eligible for accrual" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="036" Description="Fare not eligible for accrual" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="037" Description="Flight did not operate on that date" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="038" Description="Award or ID ticket" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="039" Description="Invalid seat number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="040" Description="Invalid boarding number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="041" Description="Ticket not eligible" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="042" Description="Passenger voluntary off-loaded" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="043" Description="Passenger involuntary off-loaded" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="044" Description="Invalid marketing code" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="045" Description="Incorrect billed booking class" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="046" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="047" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="048" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="049" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="FlightDetailError" Code="050" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+  <Field Type="CustomerInfoError" Code="051" Description="Invalid FFP number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="052" Description="FFP number does not match name" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="053" Description="Ticketed name not found on specified flight" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="054" Description="Duplicate name found and additional passenger information required" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="055" Description="Invalid account status" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="056" Description="Flight date less than member enrollment date" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="057" Description="Passenger no show" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="058" Description="Passenger cancel" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="059" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="050" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="061" Description="Already credited to operating airline's FFP" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="062" Description="Already credited to another airline's FFP" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="063" Description="Already credited to same customer of requesting FFP" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="064" Description="Already credited to other customer of requesting FFP" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="065" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="066" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="067" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="068" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="069" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="CustomerInfoError" Code="070" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+  <Field Type="DataRevision" Code="071" Description="Revised flight number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="072" Description="Revised flight date" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="073" Description="Revised origin and/or destination" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="074" Description="Revised operating revenue booking class code" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="075" Description="Upgrade flag" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="076" Description="Revised FFP number" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="077" Description="Revised tier status" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="078" Description="Revised passenger name" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="079" Description="Partial rejection" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="080" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="081" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="082" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="083" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="084" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="085" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="086" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="087" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="088" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="089" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="DataRevision" Code="090" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+
+  <Field Type="IrregularOperations" Code="091" Description="Cancelled flight" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="092" Description="Flight delayed" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="093" Description="Inbound flight delayed" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="094" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="095" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="096" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="097" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="098" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="099" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="100" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="101" Description="Pax transferred to another airline" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="102" Description="Pax transferred to AO" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="103" Description="Pax transferred to BD" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="104" Description="Pax transferred to JK" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="105" Description="Pax transferred to LH" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="106" Description="Pax transferred to LO" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="107" Description="Pax transferred to OS" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="108" Description="Pax transferred to NH" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="109" Description="Pax transferred to NZ" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="110" Description="Pax transferred to RG" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="111" Description="Pax transferred to SA" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="112" Description="Pax transferred to SK" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="113" Description="Pax transferred to SQ" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="114" Description="Pax transferred to TG" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="115" Description="Pax transferred to TP" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="116" Description="Pax transferred to UA" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="117" Description="Pax transferred to US" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="118" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="119" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+  <Field Type="IrregularOperations" Code="120" Description="Not defined" Header="N" Data="N" Trailer="N" AccrualHandBack="N" AccrualBillingReject="N" RetroCreditResponse="N"/>
+
+
+</ResponseCodes>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.nlog-project.org/schemas/NLog.xsd NLog.xsd"
+      autoReload="true"
+      throwExceptions="false"
+     internalLogFile="c:\temp\nlog-internal.txt">
+
+
+  <variable name="myvar" value="myvalue"/>
+  <targets>
+    <target name="logException"  layout="
+-------------- ${level} (${longdate}) --------------${newline}
+${newline}
+Call Site: ${callsite}${newline}
+Exception Type: ${exception:format=Type}${newline}
+Exception Message: ${exception:format=Message}${newline}
+Stack Trace: ${exception:format=StackTrace}${newline}
+Additional Info: ${message}${newline}" xsi:type="File" archiveNumbering="Sequence"
+            archiveAboveSize="30000000" fileName="E:\PAI2\EDW\logs\${shortdate}_EDW_File_Handler_Log.txt"  />
+    
+    <target name="logInfo"  layout="
+-------------- ${level} (${longdate}) --------------${newline}
+${newline}
+Call Site: ${callsite}${newline}
+Additional Info: ${message}${newline}" xsi:type="File"  archiveFileName="$E:\PAI2\EDW\logs\${shortdate}_EDW_Handler_Log.{#####}.txt"
+            archiveAboveSize="100"
+            archiveNumbering="Sequence"
+            concurrentWrites="true"
+            keepFileOpen="false" fileName="E:\PAI2\EDW\logs\${shortdate}_EDW_File_Handler_Log.txt"  />
+
+    <target name="logError"  layout="
+-------------- ${level} (${longdate}) --------------${newline}
+${newline}
+Call Site: ${callsite}${newline}
+Additional Info: ${message}${newline}" xsi:type="File" archiveNumbering="Sequence"
+            archiveAboveSize="30000000"  fileName="E:\PAI2\EDW\logs\${shortdate}_EDW_File_Handler_Log.txt"   />
+
+  </targets>  
+  <rules>
+    <logger name="*" level="Info" writeTo="logInfo"/>
+    <logger name="*" level="Error" writeTo="logError"/>
+    <logger name="*" level="Fatal" writeTo="logException"/>
+  </rules>
+
+
+
+
+</nlog>

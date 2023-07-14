@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDWREVEXPModelStoreContainer" CdmEntityContainer="EDWREVEXPEntities">
+    <EntitySetMapping Name="vPAI_Coupon">
+      <EntityTypeMapping TypeName="EDWREVEXPModel.vPAI_Coupon">
+        <MappingFragment StoreEntitySet="vPAI_Coupon">
+          <ScalarProperty Name="AIRNO_JRNY" ColumnName="AIRNO_JRNY" />
+          <ScalarProperty Name="FORMSENO_JRNY" ColumnName="FORMSENO_JRNY" />
+          <ScalarProperty Name="AIRNO_CONJ" ColumnName="AIRNO_CONJ" />
+          <ScalarProperty Name="FORMSENO_CONJ" ColumnName="FORMSENO_CONJ" />
+          <ScalarProperty Name="SEQ_NO_DOC" ColumnName="SEQ_NO_DOC" />
+          <ScalarProperty Name="SEQ_NO_CONJ" ColumnName="SEQ_NO_CONJ" />
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+          <ScalarProperty Name="AIRNO" ColumnName="AIRNO" />
+          <ScalarProperty Name="FORMSENO" ColumnName="FORMSENO" />
+          <ScalarProperty Name="TYPEPAX" ColumnName="TYPEPAX" />
+          <ScalarProperty Name="TYPEIND" ColumnName="TYPEIND" />
+          <ScalarProperty Name="TYPEDOC" ColumnName="TYPEDOC" />
+          <ScalarProperty Name="ISSUE_DATE" ColumnName="ISSUE_DATE" />
+          <ScalarProperty Name="PNR" ColumnName="PNR" />
+          <ScalarProperty Name="PAXNAME" ColumnName="PAXNAME" />
+          <ScalarProperty Name="MAIN_TYPE" ColumnName="MAIN_TYPE" />
+          <ScalarProperty Name="COUPON" ColumnName="COUPON" />
+          <ScalarProperty Name="TRAFFIC_STATUS" ColumnName="TRAFFIC_STATUS" />
+          <ScalarProperty Name="MISMATCH_STATUS" ColumnName="MISMATCH_STATUS" />
+          <ScalarProperty Name="EXCHANGE_STATUS" ColumnName="EXCHANGE_STATUS" />
+          <ScalarProperty Name="INC_INVOICE_STATUS" ColumnName="INC_INVOICE_STATUS" />
+          <ScalarProperty Name="MANCL_STATUS" ColumnName="MANCL_STATUS" />
+          <ScalarProperty Name="PRINT_EXCH_STATUS" ColumnName="PRINT_EXCH_STATUS" />
+          <ScalarProperty Name="REV_CPN" ColumnName="REV_CPN" />
+          <ScalarProperty Name="PL_FROM" ColumnName="PL_FROM" />
+          <ScalarProperty Name="PL_TO" ColumnName="PL_TO" />
+          <ScalarProperty Name="PL_CARRIER" ColumnName="PL_CARRIER" />
+          <ScalarProperty Name="PL_FLIGHTNO" ColumnName="PL_FLIGHTNO" />
+          <ScalarProperty Name="PL_FLIGHT_DATE" ColumnName="PL_FLIGHT_DATE" />
+          <ScalarProperty Name="BOOKING_CLASS" ColumnName="BOOKING_CLASS" />
+          <ScalarProperty Name="FBTD" ColumnName="FBTD" />
+          <ScalarProperty Name="FB_CLASS" ColumnName="FB_CLASS" />
+          <ScalarProperty Name="PAID_CLASS" ColumnName="PAID_CLASS" />
+          <ScalarProperty Name="TRAD_BOOK_NBR" ColumnName="TRAD_BOOK_NBR" />
+          <ScalarProperty Name="FLOWN_MAIN_TYPE" ColumnName="FLOWN_MAIN_TYPE" />
+          <ScalarProperty Name="FLOWN_SUB_TYPE" ColumnName="FLOWN_SUB_TYPE" />
+          <ScalarProperty Name="STRANDING" ColumnName="STRANDING" />
+          <ScalarProperty Name="NBR_PAX" ColumnName="NBR_PAX" />
+          <ScalarProperty Name="FLIGHT_NBR" ColumnName="FLIGHT_NBR" />
+          <ScalarProperty Name="FLIGHT_DATE" ColumnName="FLIGHT_DATE" />
+          <ScalarProperty Name="ON_CITY" ColumnName="ON_CITY" />
+          <ScalarProperty Name="OFF_CITY" ColumnName="OFF_CITY" />
+          <ScalarProperty Name="FB_GROUP" ColumnName="FB_GROUP" />
+          <ScalarProperty Name="EB_MBR_ID" ColumnName="EB_MBR_ID" />
+          <ScalarProperty Name="SOLD_MAIN_TYPE" ColumnName="SOLD_MAIN_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

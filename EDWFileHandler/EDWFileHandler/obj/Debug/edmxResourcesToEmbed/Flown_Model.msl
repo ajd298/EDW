@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDWTESTModelStoreContainer" CdmEntityContainer="EDWTESTEntities">
+    <EntitySetMapping Name="FLOWN_PAI">
+      <EntityTypeMapping TypeName="EDWTESTModel.FLOWN_PAI">
+        <MappingFragment StoreEntitySet="FLOWN_PAI">
+          <ScalarProperty Name="FLOWN_FLT_ID" ColumnName="FLOWN_FLT_ID" />
+          <ScalarProperty Name="FLOWN_SEG_DEP_DATE" ColumnName="FLOWN_SEG_DEP_DATE" />
+          <ScalarProperty Name="FLOWN_STN_FR_CD" ColumnName="FLOWN_STN_FR_CD" />
+          <ScalarProperty Name="FLOWN_STN_TO_CD" ColumnName="FLOWN_STN_TO_CD" />
+          <ScalarProperty Name="FLOWN_BKG_CL" ColumnName="FLOWN_BKG_CL" />
+          <ScalarProperty Name="FLOWN_SVC_CL" ColumnName="FLOWN_SVC_CL" />
+          <ScalarProperty Name="OPR_AIRL_CD" ColumnName="OPR_AIRL_CD" />
+          <ScalarProperty Name="PNR_NO" ColumnName="PNR_NO" />
+          <ScalarProperty Name="PSGR_FIRST_NM" ColumnName="PSGR_FIRST_NM" />
+          <ScalarProperty Name="PSGR_LAST_NM" ColumnName="PSGR_LAST_NM" />
+          <ScalarProperty Name="MKT_FLT_ID" ColumnName="MKT_FLT_ID" />
+          <ScalarProperty Name="AMADEUS_PNR" ColumnName="AMADEUS_PNR" />
+          <ScalarProperty Name="GALILEO_PNR" ColumnName="GALILEO_PNR" />
+          <ScalarProperty Name="SABRE_PNR" ColumnName="SABRE_PNR" />
+          <ScalarProperty Name="WORLDSPAN_PNR" ColumnName="WORLDSPAN_PNR" />
+          <ScalarProperty Name="FQTV_AIRL_CD" ColumnName="FQTV_AIRL_CD" />
+          <ScalarProperty Name="FQTV_CARD_TYPE" ColumnName="FQTV_CARD_TYPE" />
+          <ScalarProperty Name="FQTV_CARD_NO" ColumnName="FQTV_CARD_NO" />
+          <ScalarProperty Name="INFANT_IND" ColumnName="INFANT_IND" />
+          <ScalarProperty Name="PASSIVE_CREW_IND" ColumnName="PASSIVE_CREW_IND" />
+          <ScalarProperty Name="UMNR_IND" ColumnName="UMNR_IND" />
+          <ScalarProperty Name="REVENUE_IND" ColumnName="REVENUE_IND" />
+          <ScalarProperty Name="PASSENGER_INDUSTRY_TYPE" ColumnName="PASSENGER_INDUSTRY_TYPE" />
+          <ScalarProperty Name="PASSENGER_TYPE" ColumnName="PASSENGER_TYPE" />
+          <ScalarProperty Name="TKT_TYPE_CODE" ColumnName="TKT_TYPE_CODE" />
+          <ScalarProperty Name="TKT_DESG_AIRL_NO" ColumnName="TKT_DESG_AIRL_NO" />
+          <ScalarProperty Name="TKT_NO" ColumnName="TKT_NO" />
+          <ScalarProperty Name="TKT_COUPON_NO" ColumnName="TKT_COUPON_NO" />
+          <ScalarProperty Name="IRREG_CD" ColumnName="IRREG_CD" />
+          <ScalarProperty Name="SOURCE_SYSTEM_ID" ColumnName="SOURCE_SYSTEM_ID" />
+          <ScalarProperty Name="SIW_LOAD_TMS" ColumnName="SIW_LOAD_TMS" />
+          <ScalarProperty Name="SIW_LOAD_ID" ColumnName="SIW_LOAD_ID" />
+          <ScalarProperty Name="DOWNGRADE_TMS" ColumnName="DOWNGRADE_TMS" />
+          <ScalarProperty Name="UPGRADE_TMS" ColumnName="UPGRADE_TMS" />
+          <ScalarProperty Name="FLOWN_TMS" ColumnName="FLOWN_TMS" />
+          <ScalarProperty Name="FQTR_IND" ColumnName="FQTR_IND" />
+          <ScalarProperty Name="Hist_SPNR" ColumnName="Hist_SPNR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

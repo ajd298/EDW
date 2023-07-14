@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDWREVEXPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="vPAI_Coupon">
+    <Key>
+      <PropertyRef Name="OWNER_ID" />
+      <PropertyRef Name="TYPEDOC" />
+      <PropertyRef Name="ISSUE_DATE" />
+      <PropertyRef Name="MAIN_TYPE" />
+      <PropertyRef Name="COUPON" />
+      <PropertyRef Name="TRAFFIC_STATUS" />
+      <PropertyRef Name="MISMATCH_STATUS" />
+      <PropertyRef Name="EXCHANGE_STATUS" />
+      <PropertyRef Name="INC_INVOICE_STATUS" />
+      <PropertyRef Name="MANCL_STATUS" />
+      <PropertyRef Name="PRINT_EXCH_STATUS" />
+      <PropertyRef Name="REV_CPN" />
+      <PropertyRef Name="PL_FLIGHT_DATE" />
+      <PropertyRef Name="TRAD_BOOK_NBR" />
+      <PropertyRef Name="FLOWN_MAIN_TYPE" />
+      <PropertyRef Name="FLOWN_SUB_TYPE" />
+      <PropertyRef Name="STRANDING" />
+      <PropertyRef Name="FB_GROUP" />
+      <PropertyRef Name="EB_MBR_ID" />
+      <PropertyRef Name="SOLD_MAIN_TYPE" />
+    </Key>
+    <Property Name="AIRNO_JRNY" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="FORMSENO_JRNY" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="AIRNO_CONJ" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="FORMSENO_CONJ" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="SEQ_NO_DOC" Type="Int16" />
+    <Property Name="SEQ_NO_CONJ" Type="Int16" />
+    <Property Name="OWNER_ID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AIRNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="FORMSENO" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="TYPEPAX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="TYPEIND" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TYPEDOC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISSUE_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PNR" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="PAXNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MAIN_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COUPON" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TRAFFIC_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MISMATCH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EXCHANGE_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INC_INVOICE_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MANCL_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRINT_EXCH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REV_CPN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PL_FROM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PL_TO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PL_CARRIER" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="PL_FLIGHTNO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="PL_FLIGHT_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BOOKING_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FBTD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FB_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PAID_CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRAD_BOOK_NBR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_MAIN_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_SUB_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STRANDING" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NBR_PAX" Type="Int16" />
+    <Property Name="FLIGHT_NBR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="FLIGHT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="ON_CITY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="OFF_CITY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="FB_GROUP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EB_MBR_ID" Type="Int32" Nullable="false" />
+    <Property Name="SOLD_MAIN_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EDWREVEXPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="vPAI_Coupon" EntityType="Self.vPAI_Coupon" />
+  </EntityContainer>
+</Schema>

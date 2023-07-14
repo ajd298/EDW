@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PAIModelStoreContainer" CdmEntityContainer="PAIEntities">
+    <FunctionImportMapping FunctionImportName="GetFlightDetailsSIRAX" FunctionName="PAIModel.Store.GetFlightDetailsSIRAX" />
+    <EntitySetMapping Name="AirportsIATAs">
+      <EntityTypeMapping TypeName="PAIModel.AirportsIATA">
+        <MappingFragment StoreEntitySet="AirportsIATA">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="ContinentCode" ColumnName="ContinentCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IATACode" ColumnName="IATACode" />
+          <ScalarProperty Name="AirportId" ColumnName="AirportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLDSEGs">
+      <EntityTypeMapping TypeName="PAIModel.VLDSEG">
+        <MappingFragment StoreEntitySet="VLDSEG">
+          <ScalarProperty Name="RSCS" ColumnName="RSCS" />
+          <ScalarProperty Name="LINEACD" ColumnName="LINEACD" />
+          <ScalarProperty Name="DAYCHG" ColumnName="DAYCHG" />
+          <ScalarProperty Name="DATETO" ColumnName="DATETO" />
+          <ScalarProperty Name="DATEFROM" ColumnName="DATEFROM" />
+          <ScalarProperty Name="CITYOFF" ColumnName="CITYOFF" />
+          <ScalarProperty Name="CITYON" ColumnName="CITYON" />
+          <ScalarProperty Name="CARRIER" ColumnName="CARRIER" />
+          <ScalarProperty Name="AIRLDESG" ColumnName="AIRLDESG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetResSiraxMatchedrecords" FunctionName="PAIModel.Store.GetResSiraxMatchedrecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAIModel.GetResSiraxMatchedrecords_Result">
+          <ScalarProperty Name="AIRTRACK_FTL_PFS_ID" ColumnName="AIRTRACK_FTL_PFS_ID" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="RECLOC" ColumnName="RECLOC" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="PROCESSED_STATUS" ColumnName="PROCESSED_STATUS" />
+          <ScalarProperty Name="DTEDWRESID" ColumnName="DTEDWRESID" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="RESP_CODE" ColumnName="RESP_CODE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LoadAirtrack" FunctionName="PAIModel.Store.LoadAirtrack" />
+    <FunctionImportMapping FunctionImportName="LoadAirtrackFromFTL" FunctionName="PAIModel.Store.LoadAirtrackFromFTL" />
+    <EntitySetMapping Name="AIRTRACKDCSPALs">
+      <EntityTypeMapping TypeName="PAIModel.AIRTRACKDCSPAL">
+        <MappingFragment StoreEntitySet="AIRTRACKDCSPAL">
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="RESP_CODE" ColumnName="RESP_CODE" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="DTEDWDCSID" ColumnName="DTEDWDCSID" />
+          <ScalarProperty Name="PROCESSED_STATUS" ColumnName="PROCESSED_STATUS" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="RECLOC" ColumnName="RECLOC" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="AIRTRACK_FTL_PFS_ID" ColumnName="AIRTRACK_FTL_PFS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AIRTRACKFTLPFS">
+      <EntityTypeMapping TypeName="PAIModel.AIRTRACKFTLPF">
+        <MappingFragment StoreEntitySet="AIRTRACKFTLPFS">
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="RESP_CODE" ColumnName="RESP_CODE" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="DT_EDW_FLT_ID" ColumnName="DT_EDW_FLT_ID" />
+          <ScalarProperty Name="PROCESSED_STATUS" ColumnName="PROCESSED_STATUS" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="RECLOC" ColumnName="RECLOC" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="AIRTRACK_FTL_PFS_ID" ColumnName="AIRTRACK_FTL_PFS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AIRTRACKRES">
+      <EntityTypeMapping TypeName="PAIModel.AIRTRACKRE">
+        <MappingFragment StoreEntitySet="AIRTRACKRES">
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="RESP_CODE" ColumnName="RESP_CODE" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="DTEDWRESID" ColumnName="DTEDWRESID" />
+          <ScalarProperty Name="PROCESSED_STATUS" ColumnName="PROCESSED_STATUS" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="RECLOC" ColumnName="RECLOC" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="AIRTRACK_FTL_PFS_ID" ColumnName="AIRTRACK_FTL_PFS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATATRANSFEREDWDCS">
+      <EntityTypeMapping TypeName="PAIModel.DATATRANSFEREDWDC">
+        <MappingFragment StoreEntitySet="DATATRANSFEREDWDCS">
+          <ScalarProperty Name="NOOF_REC_RJCTD" ColumnName="NOOF_REC_RJCTD" />
+          <ScalarProperty Name="LST_UPDTD" ColumnName="LST_UPDTD" />
+          <ScalarProperty Name="TOTAL_REC" ColumnName="TOTAL_REC" />
+          <ScalarProperty Name="LOCAL_DELIVNO" ColumnName="LOCAL_DELIVNO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_OF_INSERT" ColumnName="DATE_OF_INSERT" />
+          <ScalarProperty Name="DELIVDAT" ColumnName="DELIVDAT" />
+          <ScalarProperty Name="TYPDELIV" ColumnName="TYPDELIV" />
+          <ScalarProperty Name="DELIVNO" ColumnName="DELIVNO" />
+          <ScalarProperty Name="SENDSYS" ColumnName="SENDSYS" />
+          <ScalarProperty Name="DATASUP" ColumnName="DATASUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATATRANSFEREDWFLTs">
+      <EntityTypeMapping TypeName="PAIModel.DATATRANSFEREDWFLT">
+        <MappingFragment StoreEntitySet="DATATRANSFEREDWFLT">
+          <ScalarProperty Name="NOOF_REC_RJCTD" ColumnName="NOOF_REC_RJCTD" />
+          <ScalarProperty Name="LST_UPDTD" ColumnName="LST_UPDTD" />
+          <ScalarProperty Name="TOTAL_REC" ColumnName="TOTAL_REC" />
+          <ScalarProperty Name="LOCAL_DELIVNO" ColumnName="LOCAL_DELIVNO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_OF_INSERT" ColumnName="DATE_OF_INSERT" />
+          <ScalarProperty Name="DELIVDAT" ColumnName="DELIVDAT" />
+          <ScalarProperty Name="TYPDELIV" ColumnName="TYPDELIV" />
+          <ScalarProperty Name="DELIVNO" ColumnName="DELIVNO" />
+          <ScalarProperty Name="SENDSYS" ColumnName="SENDSYS" />
+          <ScalarProperty Name="DATASUP" ColumnName="DATASUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATATRANSFEREDWRES">
+      <EntityTypeMapping TypeName="PAIModel.DATATRANSFEREDWRE">
+        <MappingFragment StoreEntitySet="DATATRANSFEREDWRES">
+          <ScalarProperty Name="NOOF_REC_RJCTD" ColumnName="NOOF_REC_RJCTD" />
+          <ScalarProperty Name="LST_UPDTD" ColumnName="LST_UPDTD" />
+          <ScalarProperty Name="TOTAL_REC" ColumnName="TOTAL_REC" />
+          <ScalarProperty Name="LOCAL_DELIVNO" ColumnName="LOCAL_DELIVNO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_OF_INSERT" ColumnName="DATE_OF_INSERT" />
+          <ScalarProperty Name="DELIVDAT" ColumnName="DELIVDAT" />
+          <ScalarProperty Name="TYPDELIV" ColumnName="TYPDELIV" />
+          <ScalarProperty Name="DELIVNO" ColumnName="DELIVNO" />
+          <ScalarProperty Name="SENDSYS" ColumnName="SENDSYS" />
+          <ScalarProperty Name="DATASUP" ColumnName="DATASUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AIRTRACKs">
+      <EntityTypeMapping TypeName="PAIModel.AIRTRACK">
+        <MappingFragment StoreEntitySet="AIRTRACK">
+          <ScalarProperty Name="SRC" ColumnName="SRC" />
+          <ScalarProperty Name="AIRTRACKRESID" ColumnName="AIRTRACKRESID" />
+          <ScalarProperty Name="RES_PSGRNT" ColumnName="RES_PSGRNT" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="RES_TICKETLESSCODE" ColumnName="RES_TICKETLESSCODE" />
+          <ScalarProperty Name="RES_CMPCNSPNTYPE" ColumnName="RES_CMPCNSPNTYPE" />
+          <ScalarProperty Name="RES_CMPID" ColumnName="RES_CMPID" />
+          <ScalarProperty Name="RES_COUPNO" ColumnName="RES_COUPNO" />
+          <ScalarProperty Name="RES_FBCODE" ColumnName="RES_FBCODE" />
+          <ScalarProperty Name="RES_MKTFLTNO" ColumnName="RES_MKTFLTNO" />
+          <ScalarProperty Name="RES_BKGCLS" ColumnName="RES_BKGCLS" />
+          <ScalarProperty Name="RES_STNOFF" ColumnName="RES_STNOFF" />
+          <ScalarProperty Name="RES_SERVCL" ColumnName="RES_SERVCL" />
+          <ScalarProperty Name="RES_PAXNM" ColumnName="RES_PAXNM" />
+          <ScalarProperty Name="RES_DOCNO" ColumnName="RES_DOCNO" />
+          <ScalarProperty Name="RES_CCID" ColumnName="RES_CCID" />
+          <ScalarProperty Name="RES_CCTYPME" ColumnName="RES_CCTYPME" />
+          <ScalarProperty Name="RES_STNON" ColumnName="RES_STNON" />
+          <ScalarProperty Name="RES_DATOP" ColumnName="RES_DATOP" />
+          <ScalarProperty Name="RES_FLTNO" ColumnName="RES_FLTNO" />
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="DTID" ColumnName="DTID" />
+          <ScalarProperty Name="CURR_STATUS" ColumnName="CURR_STATUS" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="UPDTD_ON" ColumnName="UPDTD_ON" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="AIRTRACKID" ColumnName="AIRTRACKID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATATRANSFERAIRTRACKs">
+      <EntityTypeMapping TypeName="PAIModel.DATATRANSFERAIRTRACK">
+        <MappingFragment StoreEntitySet="DATATRANSFERAIRTRACK">
+          <ScalarProperty Name="SRC" ColumnName="SRC" />
+          <ScalarProperty Name="LST_UPDTD" ColumnName="LST_UPDTD" />
+          <ScalarProperty Name="TOTAL_REC" ColumnName="TOTAL_REC" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_OF_INSERT" ColumnName="DATE_OF_INSERT" />
+          <ScalarProperty Name="DELIVNO" ColumnName="DELIVNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetResSRXMatchedRecords" FunctionName="PAIModel.Store.GetResSRXMatchedRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAIModel.GetResSRXMatchedRecords_Result">
+          <ScalarProperty Name="AIRTRACK_FTL_PFS_ID" ColumnName="AIRTRACK_FTL_PFS_ID" />
+          <ScalarProperty Name="FLTNO" ColumnName="FLTNO" />
+          <ScalarProperty Name="FLTSUF" ColumnName="FLTSUF" />
+          <ScalarProperty Name="DATOP" ColumnName="DATOP" />
+          <ScalarProperty Name="STNON" ColumnName="STNON" />
+          <ScalarProperty Name="CCTYPME" ColumnName="CCTYPME" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="DOCNO" ColumnName="DOCNO" />
+          <ScalarProperty Name="PAXNM" ColumnName="PAXNM" />
+          <ScalarProperty Name="SERVCL" ColumnName="SERVCL" />
+          <ScalarProperty Name="RECLOC" ColumnName="RECLOC" />
+          <ScalarProperty Name="STNOFF" ColumnName="STNOFF" />
+          <ScalarProperty Name="BKGCLS" ColumnName="BKGCLS" />
+          <ScalarProperty Name="PSGRNT" ColumnName="PSGRNT" />
+          <ScalarProperty Name="MKTFLTNO" ColumnName="MKTFLTNO" />
+          <ScalarProperty Name="INSERTED_ON" ColumnName="INSERTED_ON" />
+          <ScalarProperty Name="PROCESSED_STATUS" ColumnName="PROCESSED_STATUS" />
+          <ScalarProperty Name="DTEDWRESID" ColumnName="DTEDWRESID" />
+          <ScalarProperty Name="FBCODE" ColumnName="FBCODE" />
+          <ScalarProperty Name="COUPNO" ColumnName="COUPNO" />
+          <ScalarProperty Name="RESP_CODE" ColumnName="RESP_CODE" />
+          <ScalarProperty Name="CMPID" ColumnName="CMPID" />
+          <ScalarProperty Name="CMPCNSPNTYPE" ColumnName="CMPCNSPNTYPE" />
+          <ScalarProperty Name="AUTOCHECKIN" ColumnName="AUTOCHECKIN" />
+          <ScalarProperty Name="TICKETLESSCODE" ColumnName="TICKETLESSCODE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DATATRANSFERSIRAXINs">
+      <EntityTypeMapping TypeName="PAIModel.DATATRANSFERSIRAXIN">
+        <MappingFragment StoreEntitySet="DATATRANSFERSIRAXIN">
+          <ScalarProperty Name="LOCAL_DELIVNO" ColumnName="LOCAL_DELIVNO" />
+          <ScalarProperty Name="NOOF_REC_RJCTD" ColumnName="NOOF_REC_RJCTD" />
+          <ScalarProperty Name="LST_UPDTD" ColumnName="LST_UPDTD" />
+          <ScalarProperty Name="TOTAL_REC" ColumnName="TOTAL_REC" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_OF_INSERT" ColumnName="DATE_OF_INSERT" />
+          <ScalarProperty Name="DELIVDAT" ColumnName="DELIVDAT" />
+          <ScalarProperty Name="TYPDELIV" ColumnName="TYPDELIV" />
+          <ScalarProperty Name="DELIVNO" ColumnName="DELIVNO" />
+          <ScalarProperty Name="SENDSYS" ColumnName="SENDSYS" />
+          <ScalarProperty Name="DATASUP" ColumnName="DATASUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

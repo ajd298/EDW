@@ -1,0 +1,61 @@
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.config
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe.config
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.pdb
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.dll
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.xml
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.exe
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.pdb
+E:\Saurav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csprojResolveAssemblyReference.cache
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.config
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe.config
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.pdb
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.dll
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.xml
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.AssemblyReference.cache
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.CoreCompileInputs.cache
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.CopyComplete
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.exe
+E:\Gourav\EDW Handler\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.pdb
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.config
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe.config
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.exe
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EDWFileHandler.pdb
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.dll
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\NLog.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\bin\Debug\System.ValueTuple.xml
+C:\Projects\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.AssemblyReference.cache
+C:\Projects\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.CoreCompileInputs.cache
+C:\Projects\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.csproj.CopyComplete
+C:\Projects\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.exe
+C:\Projects\EDWFileHandler\EDWFileHandler\obj\Debug\EDWFileHandler.pdb

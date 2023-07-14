@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDWTESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FLOWN_PAI">
+    <Key>
+      <PropertyRef Name="FLOWN_FLT_ID" />
+      <PropertyRef Name="FLOWN_SEG_DEP_DATE" />
+      <PropertyRef Name="FLOWN_STN_FR_CD" />
+      <PropertyRef Name="FLOWN_STN_TO_CD" />
+      <PropertyRef Name="FLOWN_BKG_CL" />
+      <PropertyRef Name="FLOWN_SVC_CL" />
+      <PropertyRef Name="OPR_AIRL_CD" />
+      <PropertyRef Name="INFANT_IND" />
+      <PropertyRef Name="PASSIVE_CREW_IND" />
+      <PropertyRef Name="UMNR_IND" />
+      <PropertyRef Name="REVENUE_IND" />
+      <PropertyRef Name="PASSENGER_TYPE" />
+      <PropertyRef Name="SOURCE_SYSTEM_ID" />
+      <PropertyRef Name="SIW_LOAD_TMS" />
+      <PropertyRef Name="SIW_LOAD_ID" />
+      <PropertyRef Name="FQTR_IND" />
+    </Key>
+    <Property Name="FLOWN_FLT_ID" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_SEG_DEP_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FLOWN_STN_FR_CD" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_STN_TO_CD" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_BKG_CL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FLOWN_SVC_CL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OPR_AIRL_CD" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PNR_NO" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="PSGR_FIRST_NM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PSGR_LAST_NM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MKT_FLT_ID" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="AMADEUS_PNR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="GALILEO_PNR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="SABRE_PNR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="WORLDSPAN_PNR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="FQTV_AIRL_CD" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="FQTV_CARD_TYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="FQTV_CARD_NO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="INFANT_IND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PASSIVE_CREW_IND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UMNR_IND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REVENUE_IND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PASSENGER_INDUSTRY_TYPE" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="PASSENGER_TYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TKT_TYPE_CODE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="TKT_DESG_AIRL_NO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TKT_NO" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="TKT_COUPON_NO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IRREG_CD" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="SOURCE_SYSTEM_ID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SIW_LOAD_TMS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SIW_LOAD_ID" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DOWNGRADE_TMS" Type="DateTime" Precision="3" />
+    <Property Name="UPGRADE_TMS" Type="DateTime" Precision="3" />
+    <Property Name="FLOWN_TMS" Type="DateTime" Precision="3" />
+    <Property Name="FQTR_IND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Hist_SPNR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="EDWTESTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FLOWN_PAI" EntityType="Self.FLOWN_PAI" />
+  </EntityContainer>
+</Schema>

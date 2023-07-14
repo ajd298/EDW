@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDWTESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EDWTEST.IS.FLOWN_PAI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FLOWN_PAI">
+    <Key>
+      <PropertyRef Name="FLOWN_FLT_ID" />
+      <PropertyRef Name="FLOWN_SEG_DEP_DATE" />
+      <PropertyRef Name="FLOWN_STN_FR_CD" />
+      <PropertyRef Name="FLOWN_STN_TO_CD" />
+      <PropertyRef Name="FLOWN_BKG_CL" />
+      <PropertyRef Name="FLOWN_SVC_CL" />
+      <PropertyRef Name="OPR_AIRL_CD" />
+      <PropertyRef Name="INFANT_IND" />
+      <PropertyRef Name="PASSIVE_CREW_IND" />
+      <PropertyRef Name="UMNR_IND" />
+      <PropertyRef Name="REVENUE_IND" />
+      <PropertyRef Name="PASSENGER_TYPE" />
+      <PropertyRef Name="SOURCE_SYSTEM_ID" />
+      <PropertyRef Name="SIW_LOAD_TMS" />
+      <PropertyRef Name="SIW_LOAD_ID" />
+      <PropertyRef Name="FQTR_IND" />
+    </Key>
+    <Property Name="FLOWN_FLT_ID" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FLOWN_SEG_DEP_DATE" Type="datetime" Nullable="false" />
+    <Property Name="FLOWN_STN_FR_CD" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="FLOWN_STN_TO_CD" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="FLOWN_BKG_CL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FLOWN_SVC_CL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="OPR_AIRL_CD" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="PNR_NO" Type="char" MaxLength="7" />
+    <Property Name="PSGR_FIRST_NM" Type="varchar" MaxLength="30" />
+    <Property Name="PSGR_LAST_NM" Type="varchar" MaxLength="30" />
+    <Property Name="MKT_FLT_ID" Type="char" MaxLength="8" />
+    <Property Name="AMADEUS_PNR" Type="char" MaxLength="7" />
+    <Property Name="GALILEO_PNR" Type="char" MaxLength="7" />
+    <Property Name="SABRE_PNR" Type="char" MaxLength="7" />
+    <Property Name="WORLDSPAN_PNR" Type="char" MaxLength="7" />
+    <Property Name="FQTV_AIRL_CD" Type="char" MaxLength="3" />
+    <Property Name="FQTV_CARD_TYPE" Type="char" MaxLength="4" />
+    <Property Name="FQTV_CARD_NO" Type="char" MaxLength="20" />
+    <Property Name="INFANT_IND" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PASSIVE_CREW_IND" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="UMNR_IND" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="REVENUE_IND" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PASSENGER_INDUSTRY_TYPE" Type="char" MaxLength="7" />
+    <Property Name="PASSENGER_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TKT_TYPE_CODE" Type="char" MaxLength="4" />
+    <Property Name="TKT_DESG_AIRL_NO" Type="char" MaxLength="3" />
+    <Property Name="TKT_NO" Type="char" MaxLength="11" />
+    <Property Name="TKT_COUPON_NO" Type="char" MaxLength="1" />
+    <Property Name="IRREG_CD" Type="char" MaxLength="5" />
+    <Property Name="SOURCE_SYSTEM_ID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="SIW_LOAD_TMS" Type="datetime" Nullable="false" />
+    <Property Name="SIW_LOAD_ID" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="DOWNGRADE_TMS" Type="datetime" />
+    <Property Name="UPGRADE_TMS" Type="datetime" />
+    <Property Name="FLOWN_TMS" Type="datetime" />
+    <Property Name="FQTR_IND" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Hist_SPNR" Type="char" MaxLength="7" />
+  </EntityType>
+  <EntityContainer Name="EDWTESTModelStoreContainer">
+    <EntitySet Name="FLOWN_PAI" EntityType="Self.FLOWN_PAI" store:Type="Views" store:Schema="IS">
+      <DefiningQuery>SELECT 
+    [FLOWN_PAI].[FLOWN_FLT_ID] AS [FLOWN_FLT_ID], 
+    [FLOWN_PAI].[FLOWN_SEG_DEP_DATE] AS [FLOWN_SEG_DEP_DATE], 
+    [FLOWN_PAI].[FLOWN_STN_FR_CD] AS [FLOWN_STN_FR_CD], 
+    [FLOWN_PAI].[FLOWN_STN_TO_CD] AS [FLOWN_STN_TO_CD], 
+    [FLOWN_PAI].[FLOWN_BKG_CL] AS [FLOWN_BKG_CL], 
+    [FLOWN_PAI].[FLOWN_SVC_CL] AS [FLOWN_SVC_CL], 
+    [FLOWN_PAI].[OPR_AIRL_CD] AS [OPR_AIRL_CD], 
+    [FLOWN_PAI].[PNR_NO] AS [PNR_NO], 
+    [FLOWN_PAI].[PSGR_FIRST_NM] AS [PSGR_FIRST_NM], 
+    [FLOWN_PAI].[PSGR_LAST_NM] AS [PSGR_LAST_NM], 
+    [FLOWN_PAI].[MKT_FLT_ID] AS [MKT_FLT_ID], 
+    [FLOWN_PAI].[AMADEUS_PNR] AS [AMADEUS_PNR], 
+    [FLOWN_PAI].[GALILEO_PNR] AS [GALILEO_PNR], 
+    [FLOWN_PAI].[SABRE_PNR] AS [SABRE_PNR], 
+    [FLOWN_PAI].[WORLDSPAN_PNR] AS [WORLDSPAN_PNR], 
+    [FLOWN_PAI].[FQTV_AIRL_CD] AS [FQTV_AIRL_CD], 
+    [FLOWN_PAI].[FQTV_CARD_TYPE] AS [FQTV_CARD_TYPE], 
+    [FLOWN_PAI].[FQTV_CARD_NO] AS [FQTV_CARD_NO], 
+    [FLOWN_PAI].[INFANT_IND] AS [INFANT_IND], 
+    [FLOWN_PAI].[PASSIVE_CREW_IND] AS [PASSIVE_CREW_IND], 
+    [FLOWN_PAI].[UMNR_IND] AS [UMNR_IND], 
+    [FLOWN_PAI].[REVENUE_IND] AS [REVENUE_IND], 
+    [FLOWN_PAI].[PASSENGER_INDUSTRY_TYPE] AS [PASSENGER_INDUSTRY_TYPE], 
+    [FLOWN_PAI].[PASSENGER_TYPE] AS [PASSENGER_TYPE], 
+    [FLOWN_PAI].[TKT_TYPE_CODE] AS [TKT_TYPE_CODE], 
+    [FLOWN_PAI].[TKT_DESG_AIRL_NO] AS [TKT_DESG_AIRL_NO], 
+    [FLOWN_PAI].[TKT_NO] AS [TKT_NO], 
+    [FLOWN_PAI].[TKT_COUPON_NO] AS [TKT_COUPON_NO], 
+    [FLOWN_PAI].[IRREG_CD] AS [IRREG_CD], 
+    [FLOWN_PAI].[SOURCE_SYSTEM_ID] AS [SOURCE_SYSTEM_ID], 
+    [FLOWN_PAI].[SIW_LOAD_TMS] AS [SIW_LOAD_TMS], 
+    [FLOWN_PAI].[SIW_LOAD_ID] AS [SIW_LOAD_ID], 
+    [FLOWN_PAI].[DOWNGRADE_TMS] AS [DOWNGRADE_TMS], 
+    [FLOWN_PAI].[UPGRADE_TMS] AS [UPGRADE_TMS], 
+    [FLOWN_PAI].[FLOWN_TMS] AS [FLOWN_TMS], 
+    [FLOWN_PAI].[FQTR_IND] AS [FQTR_IND], 
+    [FLOWN_PAI].[Hist_SPNR] AS [Hist_SPNR]
+    FROM [IS].[FLOWN_PAI] AS [FLOWN_PAI]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

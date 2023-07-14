@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PAIEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetFlightDetailsSIRAX">
+      <Parameter Name="DepStn" Mode="In" Type="String" />
+      <Parameter Name="ArrStn" Mode="In" Type="String" />
+      <Parameter Name="fltType" Mode="InOut" Type="String" />
+      <Parameter Name="DepCity" Mode="InOut" Type="String" />
+      <Parameter Name="ArrCity" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AirportsIATAs" EntityType="PAIModel.AirportsIATA" />
+    <EntitySet Name="VLDSEGs" EntityType="PAIModel.VLDSEG" />
+    <FunctionImport Name="GetResSiraxMatchedrecords" ReturnType="Collection(PAIModel.GetResSiraxMatchedrecords_Result)">
+      <Parameter Name="IsDayChanges" Mode="In" Type="Boolean" />
+      <Parameter Name="DocNo" Mode="In" Type="String" />
+      <Parameter Name="DepartureDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="LoadAirtrack" />
+    <FunctionImport Name="LoadAirtrackFromFTL" />
+    <EntitySet Name="AIRTRACKDCSPALs" EntityType="PAIModel.AIRTRACKDCSPAL" />
+    <EntitySet Name="AIRTRACKFTLPFS" EntityType="PAIModel.AIRTRACKFTLPF" />
+    <EntitySet Name="AIRTRACKRES" EntityType="PAIModel.AIRTRACKRE" />
+    <EntitySet Name="DATATRANSFEREDWDCS" EntityType="PAIModel.DATATRANSFEREDWDC" />
+    <EntitySet Name="DATATRANSFEREDWFLTs" EntityType="PAIModel.DATATRANSFEREDWFLT" />
+    <EntitySet Name="DATATRANSFEREDWRES" EntityType="PAIModel.DATATRANSFEREDWRE" />
+    <AssociationSet Name="FK__AIRTRACKD__DT_ED__16B953FD" Association="PAIModel.FK__AIRTRACKD__DT_ED__16B953FD">
+      <End Role="DATATRANSFEREDWDC" EntitySet="DATATRANSFEREDWDCS" />
+      <End Role="AIRTRACKDCSPAL" EntitySet="AIRTRACKDCSPALs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AIRTRACK___DT_ED__100C566E" Association="PAIModel.FK__AIRTRACK___DT_ED__100C566E">
+      <End Role="DATATRANSFEREDWFLT" EntitySet="DATATRANSFEREDWFLTs" />
+      <End Role="AIRTRACKFTLPF" EntitySet="AIRTRACKFTLPFS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AIRTRACKR__DTEDW__1E5A75C5" Association="PAIModel.FK__AIRTRACKR__DTEDW__1E5A75C5">
+      <End Role="DATATRANSFEREDWRE" EntitySet="DATATRANSFEREDWRES" />
+      <End Role="AIRTRACKRE" EntitySet="AIRTRACKRES" />
+    </AssociationSet>
+    <EntitySet Name="DATATRANSFERAIRTRACKs" EntityType="PAIModel.DATATRANSFERAIRTRACK" />
+    <FunctionImport Name="GetResSRXMatchedRecords" ReturnType="Collection(PAIModel.GetResSRXMatchedRecords_Result)">
+      <Parameter Name="IsDayChanges" Mode="In" Type="Boolean" />
+      <Parameter Name="DocNo" Mode="In" Type="String" />
+      <Parameter Name="DepartureDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MissingData" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="DATATRANSFERSIRAXINs" EntityType="PAIModel.DATATRANSFERSIRAXIN" />
+    <EntitySet Name="AIRTRACKs" EntityType="PAIModel.AIRTRACK" />
+    <AssociationSet Name="FK__AIRTRACK__DTID__3EC74557" Association="PAIModel.FK__AIRTRACK__DTID__3EC74557">
+      <End Role="DATATRANSFERAIRTRACK" EntitySet="DATATRANSFERAIRTRACKs" />
+      <End Role="AIRTRACK" EntitySet="AIRTRACKs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AIRTRACKRESID" Association="PAIModel.FK_AIRTRACKRESID">
+      <End Role="AIRTRACKRE" EntitySet="AIRTRACKRES" />
+      <End Role="AIRTRACK" EntitySet="AIRTRACKs" />
+    </AssociationSet>
+    <EntitySet Name="DATATRANSFERAIRTRACK1" EntityType="PAIModel.DATATRANSFERAIRTRACK1" />
+    <AssociationSet Name="FK__AIRTRACK__DTID__3EC745571" Association="PAIModel.FK__AIRTRACK__DTID__3EC745571">
+      <End Role="DATATRANSFERAIRTRACK1" EntitySet="DATATRANSFERAIRTRACK1" />
+      <End Role="AIRTRACK" EntitySet="AIRTRACKs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AirportsIATA">
+    <Key>
+      <PropertyRef Name="AirportId" />
+    </Key>
+    <Property Name="AirportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IATACode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="Geography" Type="Geography" />
+    <Property Name="CityCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ContinentCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VLDSEG">
+    <Key>
+      <PropertyRef Name="AIRLDESG" />
+      <PropertyRef Name="CARRIER" />
+      <PropertyRef Name="CITYON" />
+      <PropertyRef Name="CITYOFF" />
+      <PropertyRef Name="DATEFROM" />
+      <PropertyRef Name="DATETO" />
+      <PropertyRef Name="DAYCHG" />
+      <PropertyRef Name="LINEACD" />
+      <PropertyRef Name="RSCS" />
+    </Key>
+    <Property Name="AIRLDESG" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CARRIER" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CITYON" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CITYOFF" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DATEFROM" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DATETO" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DAYCHG" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LINEACD" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RSCS" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="GetResSiraxMatchedrecords_Result">
+    <Property Type="Int32" Name="AIRTRACK_FTL_PFS_ID" Nullable="false" />
+    <Property Type="String" Name="FLTNO" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="FLTSUF" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DATOP" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="STNON" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="CCTYPME" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="CCID" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="DOCNO" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PAXNM" Nullable="true" MaxLength="81" />
+    <Property Type="String" Name="SERVCL" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="RECLOC" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="STNOFF" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="BKGCLS" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="PSGRNT" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MKTFLTNO" Nullable="true" MaxLength="7" />
+    <Property Type="DateTime" Name="INSERTED_ON" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PROCESSED_STATUS" Nullable="true" />
+    <Property Type="Int32" Name="DTEDWRESID" Nullable="false" />
+    <Property Type="String" Name="FBCODE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="COUPNO" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="RESP_CODE" Nullable="true" />
+    <Property Type="String" Name="CMPID" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="CMPCNSPNTYPE" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOCHECKIN" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TICKETLESSCODE" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <EntityType Name="AIRTRACKDCSPAL">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLTNO" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="FLTSUF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DATOP" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="STNON" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CCTYPME" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CCID" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="DOCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PAXNM" Type="String" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="SERVCL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RECLOC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="STNOFF" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BKGCLS" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PSGRNT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MKTFLTNO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTED_ON" Type="DateTime" Precision="3" />
+    <Property Name="PROCESSED_STATUS" Type="Int32" />
+    <Property Name="DTEDWDCSID" Type="Int32" Nullable="false" />
+    <Property Name="FBCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUPNO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RESP_CODE" Type="Int32" />
+    <Property Name="CMPID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CMPCNSPNTYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AUTOCHECKIN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TICKETLESSCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATATRANSFEREDWDC" Relationship="PAIModel.FK__AIRTRACKD__DT_ED__16B953FD" FromRole="AIRTRACKDCSPAL" ToRole="DATATRANSFEREDWDC" />
+  </EntityType>
+  <EntityType Name="AIRTRACKFTLPF">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLTNO" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="FLTSUF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DATOP" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="STNON" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CCTYPME" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CCID" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="DOCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PAXNM" Type="String" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="SERVCL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RECLOC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="STNOFF" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BKGCLS" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PSGRNT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MKTFLTNO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTED_ON" Type="DateTime" Precision="3" />
+    <Property Name="PROCESSED_STATUS" Type="Int32" />
+    <Property Name="DT_EDW_FLT_ID" Type="Int32" Nullable="false" />
+    <Property Name="FBCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUPNO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RESP_CODE" Type="Int32" />
+    <Property Name="CMPID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CMPCNSPNTYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AUTOCHECKIN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TICKETLESSCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATATRANSFEREDWFLT" Relationship="PAIModel.FK__AIRTRACK___DT_ED__100C566E" FromRole="AIRTRACKFTLPF" ToRole="DATATRANSFEREDWFLT" />
+  </EntityType>
+  <EntityType Name="AIRTRACKRE">
+    <Key>
+      <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+    </Key>
+    <Property Name="AIRTRACK_FTL_PFS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLTNO" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="FLTSUF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DATOP" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="STNON" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CCTYPME" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CCID" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="DOCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PAXNM" Type="String" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="SERVCL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RECLOC" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="STNOFF" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BKGCLS" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PSGRNT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MKTFLTNO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTED_ON" Type="DateTime" Precision="3" />
+    <Property Name="PROCESSED_STATUS" Type="Int32" />
+    <Property Name="DTEDWRESID" Type="Int32" Nullable="false" />
+    <Property Name="FBCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUPNO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RESP_CODE" Type="Int32" />
+    <Property Name="CMPID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CMPCNSPNTYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AUTOCHECKIN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TICKETLESSCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATATRANSFEREDWRE" Relationship="PAIModel.FK__AIRTRACKR__DTEDW__1E5A75C5" FromRole="AIRTRACKRE" ToRole="DATATRANSFEREDWRE" />
+    <NavigationProperty Name="AIRTRACKs" Relationship="PAIModel.FK_AIRTRACKRESID" FromRole="AIRTRACKRE" ToRole="AIRTRACK" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWDC">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SENDSYS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" />
+    <Property Name="TYPDELIV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVDAT" Type="DateTime" Precision="3" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="NOOF_REC_RJCTD" Type="Int32" />
+    <NavigationProperty Name="AIRTRACKDCSPALs" Relationship="PAIModel.FK__AIRTRACKD__DT_ED__16B953FD" FromRole="DATATRANSFEREDWDC" ToRole="AIRTRACKDCSPAL" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWFLT">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SENDSYS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" />
+    <Property Name="TYPDELIV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVDAT" Type="DateTime" Precision="3" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="NOOF_REC_RJCTD" Type="Int32" />
+    <NavigationProperty Name="AIRTRACKFTLPFS" Relationship="PAIModel.FK__AIRTRACK___DT_ED__100C566E" FromRole="DATATRANSFEREDWFLT" ToRole="AIRTRACKFTLPF" />
+  </EntityType>
+  <EntityType Name="DATATRANSFEREDWRE">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SENDSYS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" />
+    <Property Name="TYPDELIV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVDAT" Type="DateTime" Precision="3" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="LOCAL_DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="NOOF_REC_RJCTD" Type="Int32" />
+    <NavigationProperty Name="AIRTRACKRES" Relationship="PAIModel.FK__AIRTRACKR__DTEDW__1E5A75C5" FromRole="DATATRANSFEREDWRE" ToRole="AIRTRACKRE" />
+  </EntityType>
+  <Association Name="FK__AIRTRACKD__DT_ED__16B953FD">
+    <End Type="PAIModel.DATATRANSFEREDWDC" Role="DATATRANSFEREDWDC" Multiplicity="1" />
+    <End Type="PAIModel.AIRTRACKDCSPAL" Role="AIRTRACKDCSPAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWDC">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKDCSPAL">
+        <PropertyRef Name="DTEDWDCSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AIRTRACK___DT_ED__100C566E">
+    <End Type="PAIModel.DATATRANSFEREDWFLT" Role="DATATRANSFEREDWFLT" Multiplicity="1" />
+    <End Type="PAIModel.AIRTRACKFTLPF" Role="AIRTRACKFTLPF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWFLT">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKFTLPF">
+        <PropertyRef Name="DT_EDW_FLT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AIRTRACKR__DTEDW__1E5A75C5">
+    <End Type="PAIModel.DATATRANSFEREDWRE" Role="DATATRANSFEREDWRE" Multiplicity="1" />
+    <End Type="PAIModel.AIRTRACKRE" Role="AIRTRACKRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFEREDWRE">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACKRE">
+        <PropertyRef Name="DTEDWRESID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DATATRANSFERAIRTRACK">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="SRC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AIRTRACKs" Relationship="PAIModel.FK__AIRTRACK__DTID__3EC74557" FromRole="DATATRANSFERAIRTRACK" ToRole="AIRTRACK" />
+  </EntityType>
+  <ComplexType Name="GetResSRXMatchedRecords_Result">
+    <Property Type="Int32" Name="AIRTRACK_FTL_PFS_ID" Nullable="false" />
+    <Property Type="String" Name="FLTNO" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="FLTSUF" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="DATOP" Nullable="true" Precision="23" />
+    <Property Type="String" Name="STNON" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="CCTYPME" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="CCID" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="DOCNO" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PAXNM" Nullable="true" MaxLength="81" />
+    <Property Type="String" Name="SERVCL" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="RECLOC" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="STNOFF" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="BKGCLS" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="PSGRNT" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MKTFLTNO" Nullable="true" MaxLength="7" />
+    <Property Type="DateTime" Name="INSERTED_ON" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PROCESSED_STATUS" Nullable="true" />
+    <Property Type="Int32" Name="DTEDWRESID" Nullable="false" />
+    <Property Type="String" Name="FBCODE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="COUPNO" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="RESP_CODE" Nullable="true" />
+    <Property Type="String" Name="CMPID" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="CMPCNSPNTYPE" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOCHECKIN" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TICKETLESSCODE" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <EntityType Name="DATATRANSFERSIRAXIN">
+    <Key>
+      <PropertyRef Name="LOCAL_DELIVNO" />
+    </Key>
+    <Property Name="DATASUP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SENDSYS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" />
+    <Property Name="TYPDELIV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVDAT" Type="DateTime" Precision="3" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="NOOF_REC_RJCTD" Type="Int32" />
+    <Property Name="LOCAL_DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="AIRTRACK">
+    <Key>
+      <PropertyRef Name="AIRTRACKID" />
+    </Key>
+    <Property Name="AIRTRACKID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLTNO" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="FLTSUF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DATOP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="STNON" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CCTYPME" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CCID" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="DOCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PAXNM" Type="String" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="SERVCL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STNOFF" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BKGCLS" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MKTFLTNO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPDTD_ON" Type="DateTime" Precision="3" />
+    <Property Name="INSERTED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CURR_STATUS" Type="Int32" />
+    <Property Name="DTID" Type="Int32" Nullable="false" />
+    <Property Name="FBCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUPNO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CMPID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CMPCNSPNTYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AUTOCHECKIN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TICKETLESSCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="PSGRNT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RES_PSGRNT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="AIRTRACKRESID" Type="Int64" />
+    <Property Name="SRC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATATRANSFERAIRTRACK" Relationship="PAIModel.FK__AIRTRACK__DTID__3EC74557" FromRole="AIRTRACK" ToRole="DATATRANSFERAIRTRACK" />
+    <NavigationProperty Name="AIRTRACKRE" Relationship="PAIModel.FK_AIRTRACKRESID" FromRole="AIRTRACK" ToRole="AIRTRACKRE" />
+    <NavigationProperty Name="DATATRANSFERAIRTRACK1" Relationship="PAIModel.FK__AIRTRACK__DTID__3EC745571" FromRole="AIRTRACK" ToRole="DATATRANSFERAIRTRACK1" />
+  </EntityType>
+  <Association Name="FK__AIRTRACK__DTID__3EC74557">
+    <End Type="PAIModel.DATATRANSFERAIRTRACK" Role="DATATRANSFERAIRTRACK" Multiplicity="1" />
+    <End Type="PAIModel.AIRTRACK" Role="AIRTRACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFERAIRTRACK">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACK">
+        <PropertyRef Name="DTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AIRTRACKRESID">
+    <End Type="PAIModel.AIRTRACKRE" Role="AIRTRACKRE" Multiplicity="0..1" />
+    <End Type="PAIModel.AIRTRACK" Role="AIRTRACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AIRTRACKRE">
+        <PropertyRef Name="AIRTRACK_FTL_PFS_ID" />
+      </Principal>
+      <Dependent Role="AIRTRACK">
+        <PropertyRef Name="AIRTRACKRESID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DATATRANSFERAIRTRACK1">
+    <Key>
+      <PropertyRef Name="DELIVNO" />
+    </Key>
+    <Property Name="DELIVNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DATE_OF_INSERT" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL_REC" Type="Int32" />
+    <Property Name="LST_UPDTD" Type="DateTime" Precision="3" />
+    <Property Name="SRC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AIRTRACKs" Relationship="PAIModel.FK__AIRTRACK__DTID__3EC745571" FromRole="DATATRANSFERAIRTRACK1" ToRole="AIRTRACK" />
+  </EntityType>
+  <Association Name="FK__AIRTRACK__DTID__3EC745571">
+    <End Type="PAIModel.DATATRANSFERAIRTRACK1" Role="DATATRANSFERAIRTRACK1" Multiplicity="1" />
+    <End Type="PAIModel.AIRTRACK" Role="AIRTRACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATATRANSFERAIRTRACK1">
+        <PropertyRef Name="DELIVNO" />
+      </Principal>
+      <Dependent Role="AIRTRACK">
+        <PropertyRef Name="DTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
