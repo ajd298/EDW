@@ -8,6 +8,7 @@ using System.Globalization;
 
 namespace EDWFileHandler
 {
+
     public class BusinessLogic
     {
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
@@ -23,6 +24,7 @@ namespace EDWFileHandler
         /// </summary>
         /// <param name="dir"></param>
         /// <returns></returns>
+        /// My first code in develpoemt branch
         public int LoadFileAll(string dir)
         {
 
